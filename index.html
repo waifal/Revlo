@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revlo</title>
+
+    <link rel="stylesheet" href="./src/assets/css/output.css">
+</head>
+
+<body class="bg-slate-950 text-slate-50 antialiased">
+    <noscript>Please ensure JavaScript is enabled to view this website!</noscript>
+    <div id="app" class="min-h-screen flex flex-col">
+        <!-- Navigation -->
+        <app-nav-bar class="sticky top-0 z-50"></app-nav-bar>
+        <!-- Hero Section -->
+        <section class="w-full border-b border-slate-800 bg-radial-at-t from-indigo-500/20 via-slate-950 to-slate-950">
+            <div class="max-w-7xl mx-auto px-6 py-28 lg:py-32 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="space-y-8">
+                    <!-- Top Badge -->
+                    <div class="inline-flex items-center gap-2 rounded-full border border-slate-800 bg-slate-900/60 px-3 py-1 text-xs text-slate-300">
+                        <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+                        <span>Profit clarity for every sale</span>
+                    </div>
+                    <!-- Headline -->
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-slate-50">
+                        Profit Clarity for Resellers
+                    </h1>
+                    <!-- Subtext -->
+                    <p class="text-base sm:text-lg text-slate-300 max-w-xl">
+                        Instantly calculate costs, set smart prices, and maximize every sale.
+                    </p>
+                    <!-- CTA Row -->
+                    <div class="flex flex-wrap items-center gap-4">
+                        <a href="#calculator" class="inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-medium
+                        bg-slate-50 text-slate-900 shadow-lg shadow-indigo-500/20
+                        hover:bg-slate-200 transition">
+                            Start Calculating
+                        </a>
+                        <button class="text-sm text-slate-300 hover:text-slate-50 transition">
+                            View how it works →
+                        </button>
+                    </div>
+                    <!-- Trusted Reseller Social Proof -->
+                    <div class="flex items-center gap-3 text-slate-400 pt-2">
+                        <div class="flex -space-x-2">
+                            <div class="h-6 w-6 rounded-full bg-slate-700 border border-slate-800"></div>
+                            <div class="h-6 w-6 rounded-full bg-slate-700 border border-slate-800"></div>
+                            <div class="h-6 w-6 rounded-full bg-slate-700 border border-slate-800"></div>
+                        </div>
+                        <p class="text-sm tracking-wide">Trusted by thousands of resellers worldwide</p>
+                    </div>
+                </div>
+                <!-- Right Side Sample Card -->
+                <div class="hidden lg:flex justify-end">
+                    <div class="w-full max-w-md rounded-3xl border border-slate-800 bg-slate-900/60 p-6 shadow-xl shadow-indigo-500/10">
+                        <div class="text-xs font-medium text-slate-400 mb-5 tracking-wide">
+                            Sample Calculation
+                        </div>
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-slate-400">Cost</span>
+                                <span class="text-base font-semibold text-slate-50">$120.00</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-slate-400">Exchange Rate</span>
+                                <span class="text-base font-semibold text-slate-50">1.20</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-slate-400">Revenue</span>
+                                <span class="text-base font-semibold text-slate-50">$180.00</span>
+                            </div>
+                            <div class="flex items-center justify-between pt-1">
+                                <span class="text-sm text-slate-400">Profit</span>
+                                <span class="text-2xl font-semibold text-emerald-400">$60.00</span>
+                            </div>
+                            <div class="border-t border-slate-800 my-2"></div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-slate-400">Reinvestment (50%)</span>
+                                <span class="text-base font-semibold text-slate-50">$30.00</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-slate-400">Personal Profit (20%)</span>
+                                <span class="text-base font-semibold text-slate-50">$12.00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Feature Icons -->
+        <section class="py-16 lg:py-20 border-b border-slate-800 bg-slate-950">
+            <div class="max-w-7xl mx-auto px-6 space-y-10">
+                <div class="space-y-3">
+                    <h2 class="text-2xl sm:text-3xl font-semibold text-slate-50">
+                        Built for clear, confident pricing
+                    </h2>
+                    <p class="text-sm sm:text-base text-slate-400 max-w-2xl">
+                        Understand your margins, reinvestment, and profit before you commit to any purchase.
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                    <app-feature-icon 
+                        imgSrc  =   "src/assets/imgs/feature-icon/budget.png" 
+                        label   =   "Margin Control"
+                        desc    =   "Instantly calculate profits, reinvestments, and your operating buffer to keep every sale within healthy margins.">
+                    </app-feature-icon>
+                    <app-feature-icon 
+                        imgSrc  =   "src/assets/imgs/feature-icon/stats.png" 
+                        label   =   "Complete Breakdown"
+                        desc    =   "Get a full financial snapshot—costs, revenue, minimum profit, and total profit—all calculated in seconds.">
+                    </app-feature-icon>
+                    <app-feature-icon 
+                        imgSrc  =   "src/assets/imgs/feature-icon/financial-profit.png"
+                        label   =   "Smarter Reinvestment"
+                        desc    =   "Know exactly how much you can reinvest and what you'll walk away with before committing to your next purchase.">
+                    </app-feature-icon>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- JavaScript -->
+    <script src="./src/app.js" type="module"></script>
+</body>
+
+</html>
