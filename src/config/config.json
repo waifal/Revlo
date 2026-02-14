@@ -1,0 +1,111 @@
+{
+    "Currencies": {
+        "BaseCurrency": "US",
+        "ExchangeRates": [
+            {
+                "US": 1.00,
+                "NZ": 1.65,
+                "EU": 0.91,
+                "GB": 0.78,
+                "AU": 1.50,
+                "JP": 134.00,
+                "CA": 1.34,
+                "CH": 0.90,
+                "CN": 7.28,
+                "IN": 82.00,
+                "BR": 5.10,
+                "ZA": 18.50,
+                "SG": 1.35,
+                "KR": 1340.00,
+                "SE": 10.0,
+                "NO": 10.2,
+                "MX": 17.0,
+                "RU": 77.0,
+                "HK": 7.85,
+                "AE": 3.67
+            }
+        ],
+        "Countries": {
+            "US": {
+                "locales": "en-US",
+                "currency": "USD"
+            },
+            "NZ": {
+                "locales": "en-NZ",
+                "currency": "NZD"
+            },
+            "EU": {
+                "locales": "de-DE",
+                "currency": "EUR"
+            },
+            "GB": {
+                "locales": "en-GB",
+                "currency": "GBP"
+            },
+            "AU": {
+                "locales": "en-AU",
+                "currency": "AUD"
+            },
+            "JP": {
+                "locales": "ja-JP",
+                "currency": "JPY"
+            },
+            "CA": {
+                "locales": "en-CA",
+                "currency": "CAD"
+            },
+            "CH": {
+                "locales": "de-CH",
+                "currency": "CHF"
+            },
+            "CN": {
+                "locales": "zh-CN",
+                "currency": "CNY"
+            },
+            "IN": {
+                "locales": "hi-IN",
+                "currency": "INR"
+            },
+            "BR": {
+                "locales": "pt-BR",
+                "currency": "BRL"
+            },
+            "ZA": {
+                "locales": "en-ZA",
+                "currency": "ZAR"
+            },
+            "SG": {
+                "locales": "en-SG",
+                "currency": "SGD"
+            },
+            "KR": {
+                "locales": "ko-KR",
+                "currency": "KRW"
+            },
+            "SE": {
+                "locales": "sv-SE",
+                "currency": "SEK"
+            },
+            "NO": {
+                "locales": "no-NO",
+                "currency": "NOK"
+            },
+            "MX": {
+                "locales": "es-MX",
+                "currency": "MXN"
+            },
+            "RU": {
+                "locales": "ru-RU",
+                "currency": "RUB"
+            },
+            "HK": {
+                "locales": "zh-HK",
+                "currency": "HKD"
+            },
+            "AE": {
+                "locales": "ar-AE",
+                "currency": "AED"
+            }
+        }
+    }
+}
