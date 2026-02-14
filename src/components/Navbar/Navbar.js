@@ -8,7 +8,7 @@
  *                                                                | |                               
  *                                                                |_|                               
  *
- * Last Modified: 2026-02-14
+ * Last Modified: 2026-02-15
  */
 
 // Component CSS
@@ -27,7 +27,16 @@ class Navbar extends HTMLElement {
         super();
 
         this._root = this.attachShadow({ mode: "closed" });
-        template.component(this._root);
+        template.component(this._root).then(() => this.#_render());
+    }
+
+    #_render() {
+        const mobileBtn     = this._root.getElementById("mobileMenuBtn");
+        const mobileMenu    = this._root.getElementById("mobileMenu");
+
+        mobileBtn.addEventListener("click", () => {
+            mobileMenu.classList.toggle("hidden");
+        });
     }
 }
 

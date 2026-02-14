@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html lang="en" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
@@ -16,34 +17,39 @@
         <app-nav-bar class="sticky top-0 z-50"></app-nav-bar>
         <!-- Hero Section -->
         <section class="w-full border-b border-slate-800 bg-radial-at-t from-indigo-500/20 via-slate-950 to-slate-950">
-            <div class="max-w-7xl mx-auto px-6 py-28 lg:py-32 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                <div class="space-y-8">
+            <div class="max-w-7xl mx-auto px-6 py-16 sm:py-24 lg:py-32 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <!-- Left Column -->
+                <div class="space-y-8 text-center lg:text-left">
                     <!-- Top Badge -->
-                    <div class="inline-flex items-center gap-2 rounded-full border border-slate-800 bg-slate-900/60 px-3 py-1 text-xs text-slate-300">
+                    <div class="inline-flex items-center gap-2 rounded-full border border-slate-800 bg-slate-900/60 px-3 py-1 text-xs text-slate-300 mx-auto lg:mx-0">
                         <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
                         <span>Real margins. Real time.</span>
                     </div>
                     <!-- Headline -->
-                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-slate-50">
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-slate-50">
                         Profit Clarity for Resellers
                     </h1>
                     <!-- Subtext -->
-                    <p class="text-base sm:text-lg text-slate-300 max-w-xl">
+                    <p class="text-base sm:text-lg text-slate-300 max-w-xl mx-auto lg:mx-0">
                         Instantly calculate costs, set smart prices, and maximize every sale.
                     </p>
-                    <!-- CTA Row -->
-                    <div class="flex flex-wrap items-center gap-4">
-                        <a href="#calculator" class="inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-medium
-                        bg-slate-50 text-slate-900 shadow-lg shadow-indigo-500/20
-                        hover:bg-slate-200 transition">
+                    <!-- CTA Row  -->
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start w-full sm:w-auto">
+                        <a href="#calculator"
+                            class="rounded-full px-6 py-3 text-sm font-medium
+                            bg-slate-50 text-slate-900 shadow-lg shadow-indigo-500/20
+                            hover:bg-slate-200 transition
+                            w-full sm:w-auto text-center">
                             Start Calculating
                         </a>
-                        <button class="text-sm text-slate-300 hover:text-slate-50 transition">
+                        <button
+                            class="text-sm text-slate-300 hover:text-slate-50 transition
+                            w-full sm:w-auto text-center">
                             View how it works →
                         </button>
                     </div>
                     <!-- Trusted Reseller Social Proof -->
-                    <div class="flex items-center gap-3 text-slate-400 pt-2">
+                    <div class="flex items-center justify-center lg:justify-start gap-3 text-slate-400 pt-2">
                         <div class="flex -space-x-2">
                             <div class="h-6 w-6 rounded-full bg-slate-700 border border-slate-800"></div>
                             <div class="h-6 w-6 rounded-full bg-slate-700 border border-slate-800"></div>
@@ -52,9 +58,9 @@
                         <p class="text-sm tracking-wide">Trusted by thousands of resellers worldwide</p>
                     </div>
                 </div>
-                <!-- Right Side Sample Card -->
-                <div class="hidden lg:flex justify-end">
-                    <div class="w-full max-w-md rounded-3xl border border-slate-800 bg-slate-900/60 p-6 shadow-xl shadow-indigo-500/10">
+                <!-- Right Side Sample Card (Responsive) -->
+                <div class="flex justify-center lg:justify-end w-full">
+                    <div class="w-full max-w-sm sm:max-w-md rounded-3xl border border-slate-800 bg-slate-900/60 p-6 shadow-xl shadow-indigo-500/10">
                         <div class="text-xs font-medium text-slate-400 mb-5 tracking-wide">
                             Sample Calculation
                         </div>
@@ -120,8 +126,8 @@
             </div>
         </section>
         <!-- App Section -->
-        <section class="w-full flex justify-center py-10">
-            <div class="w-full max-w-md">
+        <section class="w-full flex justify-center py-10  px-6">
+            <div id="calculator" class="w-full max-w-md">
                 <app-calculator></app-calculator>
             </div>
         </section>
