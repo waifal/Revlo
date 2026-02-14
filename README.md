@@ -15,9 +15,9 @@ Revlo™ gives resellers instant insight into true costs, margins, and reinvestm
 
 Designed for marketplace sellers, flippers, and side‑hustlers who need fast, accurate financial clarity.
 
-## How to use
+<!-- ## How to use
 
-<!-- Run the command:
+ Run the command:
 
 ```bash
 npx @tailwindcss/cli -i ./src/assets/css/input.css -o ./src/assets/css/output.css --watch
