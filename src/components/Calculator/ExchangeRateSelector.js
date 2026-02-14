@@ -69,7 +69,7 @@ class ExchangeRateSelector extends HTMLElement {
 
             const svgPath       = `/src/assets/imgs/flags/${country.toLowerCase()}.svg`;
             li.innerHTML        = `
-                <img src="${svgPath}" class="w-5 h-3" />
+                <img src="${svgPath}" class="w-5 h-3">
                 <span class="px-2">${country}</span>
             `;
             $list.appendChild(li);
@@ -78,7 +78,7 @@ class ExchangeRateSelector extends HTMLElement {
         const initial               = this._exchangeRates[this._baseCurrency] ? this._baseCurrency : this._countries[0];
         this.dataset.exchangeRate   = this._exchangeRates[initial].toFixed(2);
         $selected.innerHTML         = `
-            <img src="/src/assets/imgs/flags/${initial.toLowerCase()}.svg" class="w-5 h-3" />
+            <img src="/src/assets/imgs/flags/${initial.toLowerCase()}.svg" class="w-5 h-3">
             <span class="px-2">${initial}</span>
         `;
 
@@ -149,16 +149,16 @@ class ExchangeRateSelector extends HTMLElement {
         options.forEach((li, idx) => {
             li.addEventListener("keydown", e => {
                 const key = e.key;
-                if (key === "ArrowDown") { 
-                    e.preventDefault(); 
-                    focusedIndex = (idx + 1) % options.length; options[focusedIndex].focus(); 
-                } else if (key === "ArrowUp") { 
-                    e.preventDefault(); 
-                    focusedIndex = (idx - 1 + options.length) % options.length; options[focusedIndex].focus(); 
-                } else if (key === "Enter" || key === " ") { 
-                    e.preventDefault(); li.click(); 
-                } else if (key === "Escape") { 
-                    e.preventDefault(); $list.classList.add("hidden"); $selected.focus(); 
+                if (key === "ArrowDown") {
+                    e.preventDefault();
+                    focusedIndex = (idx + 1) % options.length; options[focusedIndex].focus();
+                } else if (key === "ArrowUp") {
+                    e.preventDefault();
+                    focusedIndex = (idx - 1 + options.length) % options.length; options[focusedIndex].focus();
+                } else if (key === "Enter" || key === " ") {
+                    e.preventDefault(); li.click();
+                } else if (key === "Escape") {
+                    e.preventDefault(); $list.classList.add("hidden"); $selected.focus();
                 } else if (key.length === 1) {
                     // Type-ahead with cycling
                     const char = key.toUpperCase();
