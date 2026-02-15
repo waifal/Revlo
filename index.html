@@ -17,7 +17,7 @@
         <!-- Navigation -->
         <app-nav-bar class="sticky top-0 z-50"></app-nav-bar>
         <!-- Hero Section -->
-        <section class="w-full border-b border-slate-800 bg-radial-at-t from-indigo-500/20 via-slate-950 to-slate-950">
+        <section class="w-full bg-slate-900/60">
             <div class="max-w-7xl mx-auto px-6 py-16 sm:py-24 lg:py-32 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <!-- Left Column -->
                 <div class="space-y-8 text-center lg:text-left">
@@ -80,11 +80,11 @@
                         <div class="space-y-4">
                             <div class="flex items-center justify-between">
                                 <span class="text-sm text-slate-400">Cost</span>
-                                <span class="text-base font-semibold text-slate-50">$120.00</span>
+                                <span class="text-base font-semibold text-slate-50">$25.00</span>
                             </div>
                             <div class="flex items-center justify-between">
                                 <span class="text-sm text-slate-400">Exchange Rate</span>
-                                <span class="text-base font-semibold text-slate-50">1.20</span>
+                                <span class="text-base font-semibold text-slate-50">1.00</span>
                             </div>
                             <div class="flex items-center justify-between">
                                 <span class="text-sm text-slate-400">Revenue</span>
@@ -92,16 +92,20 @@
                             </div>
                             <div class="flex items-center justify-between pt-1">
                                 <span class="text-sm text-slate-400">Profit</span>
-                                <span class="text-2xl font-semibold text-emerald-400">$60.00</span>
+                                <span class="text-2xl font-semibold text-emerald-400">$155.00</span>
                             </div>
                             <div class="border-t border-slate-800 my-2"></div>
                             <div class="flex items-center justify-between">
                                 <span class="text-sm text-slate-400">Reinvestment (50%)</span>
-                                <span class="text-base font-semibold text-slate-50">$30.00</span>
+                                <span class="text-base font-semibold text-slate-50">$77.50</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-slate-400">Float (Operating Buffer) (30%)</span>
+                                <span class="text-base font-semibold text-slate-50">$46.50</span>
                             </div>
                             <div class="flex items-center justify-between">
                                 <span class="text-sm text-slate-400">Personal Profit (20%)</span>
-                                <span class="text-base font-semibold text-slate-50">$12.00</span>
+                                <span class="text-base font-semibold text-slate-50">$31.00</span>
                             </div>
                         </div>
                     </div>
@@ -109,15 +113,11 @@
             </div>
         </section>
         <!-- Feature Icons -->
-        <section class="py-16 lg:py-20 border-b border-slate-800 bg-slate-950">
+        <section class="py-16 lg:py-20 bg-slate-900/60 ">
             <div class="max-w-7xl mx-auto px-6 space-y-10">
                 <div class="space-y-3">
-                    <h2 class="text-2xl sm:text-3xl font-semibold text-slate-50">
-                        Built for clear, confident pricing
-                    </h2>
-                    <p class="text-sm sm:text-base text-slate-400 max-w-2xl">
-                        Understand your margins, reinvestment, and profit before you commit to any purchase.
-                    </p>
+                    <app-subheading label="Built for clear, confident pricing"></app-subheading>
+                    <app-subtext text="Understand your margins, reinvestment, and profit before you commit to any purchase."></app-subtext>
                 </div>
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                     <app-feature-icon 
@@ -139,23 +139,29 @@
             </div>
         </section>
         <!-- Calculator App Section -->
-        <section class="min-h-screen flex items-center border-b border-slate-800 bg-slate-950 py-16 lg:py-0">
+        <section class="min-h-screen flex items-center bg-slate-900/60 py-16 lg:py-0" id="calculator">
             <div class="max-w-7xl mx-auto px-6 space-y-10 w-full">
                 <div class="space-y-3">
-                    <h2 class="text-2xl sm:text-3xl font-semibold text-slate-50">
-                        Built for resellers
-                    </h2>
-                    <p class="text-sm sm:text-base text-slate-400 max-w-2xl">
-                        Input your cost, exchange rate, and sale price. See exactly what you'll earn before you list an item.
-                    </p>
+                    <app-subheading label="Know Your Profit Instantly"></app-subheading>
+                    <app-subtext text="Enter cost, exchange rate, and sale price to calculate your earnings before you sell."></app-subtext>
                 </div>
-                <div id="calculator"
+                <div
                     class="grid grid-cols-1 lg:grid-cols-[auto_1fr] gap-6 w-full max-w-7xl mx-auto">
                     <app-calculator></app-calculator>
                     <app-results-table></app-results-table>
                 </div>
             </div>
         </section>
+        <!-- How it works -->
+        <section class="py-16 lg:py-20 bg-slate-900/60" id="how-it-works">
+            <div class="max-w-7xl mx-auto px-6 space-y-10">
+                <div class="space-y-3">
+                    <app-subheading label="How It Works"></app-subheading>
+                    <app-subtext text="Learn our calculation process and discover strategies to maximize your earnings."></app-subtext>
+                </div>
+            </div>
+        </section>
+        <app-footer class="bg-slate-900/60"></app-footer>
     </div>
     <!-- JavaScript -->
     <script src="./src/app.js" type="module"></script>
