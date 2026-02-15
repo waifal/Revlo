@@ -151,23 +151,28 @@ class ExchangeRateSelector extends HTMLElement {
                 const key = e.key;
                 if (key === "ArrowDown") {
                     e.preventDefault();
-                    focusedIndex = (idx + 1) % options.length; options[focusedIndex].focus();
+                    focusedIndex = (idx + 1) % options.length; 
+                    options[focusedIndex].focus();
                 } else if (key === "ArrowUp") {
                     e.preventDefault();
-                    focusedIndex = (idx - 1 + options.length) % options.length; options[focusedIndex].focus();
+                    focusedIndex = (idx - 1 + options.length) % options.length; 
+                    options[focusedIndex].focus();
                 } else if (key === "Enter" || key === " ") {
                     e.preventDefault(); li.click();
                 } else if (key === "Escape") {
-                    e.preventDefault(); $list.classList.add("hidden"); $selected.focus();
+                    e.preventDefault(); $list.classList.add("hidden"); 
+                    $selected.focus();
                 } else if (key.length === 1) {
                     // Type-ahead with cycling
                     const char = key.toUpperCase();
                     const matches = options.map((o, i) => ({ o, i })).filter(o => o.o.textContent.trim().startsWith(char));
+
                     if (matches.length > 0) {
                         let match;
 
                         if (char === lastTypedChar) {
                             const current = matches.findIndex(o => o.i === lastMatchIndex);
+                            
                             match = matches[(current + 1) % matches.length];
                         } else match = matches[0];
 
