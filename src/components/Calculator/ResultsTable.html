@@ -1,0 +1,116 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
+<div class="w-full rounded-2xl border border-slate-800 bg-slate-900/60 p-4 sm:p-6
+            flex flex-col gap-5 sm:gap-6 shadow-sm shadow-slate-950/60
+            hover:shadow-lg hover:border-indigo-500 transition-all duration-200">
+
+    <!-- Header -->
+    <div class="space-y-1">
+        <h2 class="text-base sm:text-lg font-medium text-slate-50">Your Results</h2>
+        <p class="text-xs text-slate-400">Breakdown of all calculated values.</p>
+    </div>
+
+    <!-- Metric Cards -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+
+        <div class="bg-slate-800/50 p-4 rounded-xl border border-slate-800 shadow-sm shadow-slate-950/40
+                    flex items-center gap-4">
+            <i class="fa-solid fa-coins text-indigo-400 text-xl"></i>
+            <div>
+                <p class="text-xs text-slate-400">Converted Cost</p>
+                <p class="text-lg font-semibold text-slate-100">
+                    <span data-converted-cost></span>
+                </p>
+            </div>
+        </div>
+
+        <div class="bg-slate-800/50 p-4 rounded-xl border border-slate-800 shadow-sm shadow-slate-950/40
+                    flex items-center gap-4">
+            <i class="fa-solid fa-sack-dollar text-green-400 text-xl"></i>
+            <div>
+                <p class="text-xs text-slate-400">Revenue</p>
+                <p class="text-lg font-semibold text-slate-100">
+                    <span data-revenue></span>
+                </p>
+            </div>
+        </div>
+
+        <div class="bg-slate-800/50 p-4 rounded-xl border border-slate-800 shadow-sm shadow-slate-950/40
+                    flex items-center gap-4">
+            <i class="fa-solid fa-wallet text-indigo-300 text-xl"></i>
+            <div>
+                <p class="text-xs text-slate-400">Total Profit</p>
+                <p class="text-lg font-semibold" data-profit-color>
+                    <span data-total-profit></span>
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Divider -->
+    <div class="border-t border-slate-800/60 pt-2"></div>
+
+    <!-- Breakdown Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+
+        <div class="bg-slate-800/50 p-3 rounded-xl border border-slate-800 shadow-sm text-right 
+                    font-medium text-slate-100">
+            <p class="text-xs text-slate-500 text-left mb-1 flex items-center gap-1">
+                <i class="fa-solid fa-coins text-indigo-400"></i> Converted Cost
+            </p>
+            <span data-converted-cost></span>
+        </div>
+
+        <div class="bg-slate-800/50 p-3 rounded-xl border border-slate-800 shadow-sm text-right 
+                    font-medium text-slate-100">
+            <p class="text-xs text-slate-500 text-left mb-1 flex items-center gap-1">
+                <i class="fa-solid fa-arrow-right-arrow-left text-indigo-300"></i> Minimum Price
+            </p>
+            <span data-minimum-price></span>
+        </div>
+
+        <div class="bg-slate-800/50 p-3 rounded-xl border border-slate-800 shadow-sm text-right 
+                    font-medium text-slate-100">
+            <p class="text-xs text-slate-500 text-left mb-1 flex items-center gap-1">
+                <i class="fa-solid fa-sack-dollar text-green-400"></i> Revenue
+            </p>
+            <span data-revenue></span>
+        </div>
+
+        <div class="bg-slate-800/50 p-3 rounded-xl border border-slate-800 shadow-sm text-right 
+                    font-medium text-slate-100">
+            <p class="text-xs text-slate-500 text-left mb-1 flex items-center gap-1">
+                <i class="fa-solid fa-wallet text-indigo-300"></i> Personal Profit
+            </p>
+            <span data-personal-profit></span>
+        </div>
+
+        <div class="bg-slate-800/50 p-3 rounded-xl border border-slate-800 shadow-sm text-right 
+                    font-medium text-slate-100">
+            <p class="text-xs text-slate-500 text-left mb-1 flex items-center gap-1">
+                <i class="fa-solid fa-piggy-bank text-pink-400"></i> Reinvestment
+            </p>
+            <span data-reinvestment></span>
+        </div>
+
+        <div class="bg-slate-800/50 p-3 rounded-xl border border-slate-800 shadow-sm text-right 
+                    font-medium text-slate-100">
+            <p class="text-xs text-slate-500 text-left mb-1 flex items-center gap-1">
+                <i class="fa-solid fa-hand-holding-dollar text-yellow-400"></i> Float
+            </p>
+            <span data-float></span>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="mt-4 bg-slate-800/60 border border-slate-800 p-4 rounded-xl 
+                text-right text-lg font-semibold text-slate-100 flex items-center justify-end gap-3">
+        <i class="fa-solid fa-circle-dollar-to-slot" data-profit-color></i>
+        <p>Total Profit:
+            <span data-total-profit>0.00</span>
+        </p>
+    </div>
+
+</div>

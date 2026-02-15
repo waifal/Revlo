@@ -33,8 +33,14 @@ const inputReset = `
     }
 `;
 
+const customCSS = `
+    :host {
+        display: contents;
+    }
+`;
+
 const template = new BuildComponent({
-    css: [TailwindCSS, inputReset],
+    css: [TailwindCSS, inputReset, customCSS],
     html: "./src/components/Calculator/Calculator.html"
 });
 
