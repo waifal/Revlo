@@ -1,12 +1,10 @@
-<div class="w-full max-w-md mx-auto rounded-2xl border border-slate-800 bg-slate-900/60 p-4 sm:p-6
-            flex flex-col gap-5 sm:gap-6 shadow-sm shadow-slate-950/60
+<div class="w-full rounded-2xl lg:max-w-md lg:mx-auto border border-slate-800 bg-slate-900/60 
+            p-4 sm:p-6 flex flex-col gap-5 sm:gap-6 shadow-sm shadow-slate-950/60
             hover:shadow-lg hover:border-indigo-500 transition-all duration-200">
-
     <div class="space-y-1">
         <h2 class="text-base sm:text-lg font-medium text-slate-50">Calculate your profits</h2>
         <p class="text-xs text-slate-400">Base currency is USD.</p>
     </div>
-
     <div class="space-y-1.5">
         <label class="block text-sm font-medium text-slate-300">Your Cost</label>
         <input 
@@ -21,12 +19,10 @@
                 shadow-sm focus:shadow-indigo-500/10
                 no-spinner [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none 
                 [&::-webkit-outer-spin-button]:appearance-none"
-        />
+        >
     </div>
-
     <div class="space-y-1.5">
         <label class="block text-sm font-medium text-slate-300">Exchange Rate</label>
-
         <div class="flex items-center gap-2 w-full">
             <input 
                 type="number"
@@ -40,12 +36,10 @@
                     shadow-sm focus:shadow-indigo-500/10
                     no-spinner [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none 
                     [&::-webkit-outer-spin-button]:appearance-none"
-            />
-
+            >
             <exchange-rate-selector class="shrink-0 w-22 sm:w-27.5"></exchange-rate-selector>
         </div>
     </div>
-
     <div class="space-y-1.5">
         <label class="block text-sm font-medium text-slate-300">Est. Sale</label>
         <input 
@@ -60,11 +54,9 @@
                 shadow-sm focus:shadow-indigo-500/10
                 no-spinner [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none 
                 [&::-webkit-outer-spin-button]:appearance-none"
-        />
+        >
     </div>
-
     <div class="border-t border-slate-800/60 pt-2"></div>
-
     <button 
         class="w-full px-4 py-2.5 rounded-xl
             bg-linear-to-br from-indigo-500 to-indigo-600 text-slate-50 text-sm font-medium
