@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
 
-<div class="w-full rounded-2xl border border-slate-800 bg-slate-900/60 p-4 sm:p-6
+<div id="resultsTable" class="w-full rounded-2xl border border-slate-800 bg-slate-900/60 p-4 sm:p-6
             flex flex-col gap-5 sm:gap-6 shadow-sm shadow-slate-950/60
             hover:shadow-lg hover:border-indigo-500 transition-all duration-200">
     <!-- Header -->
@@ -16,7 +16,7 @@
             <div>
                 <p class="text-xs text-slate-400">Converted Cost</p>
                 <p class="text-lg font-semibold text-slate-100">
-                    <span data-converted-cost></span>
+                    <span data-converted-cost>$0.00</span>
                 </p>
             </div>
         </div>
@@ -26,7 +26,7 @@
             <div>
                 <p class="text-xs text-slate-400">Revenue</p>
                 <p class="text-lg font-semibold text-slate-100">
-                    <span data-revenue></span>
+                    <span data-revenue>$0.00</span>
                 </p>
             </div>
         </div>
@@ -36,7 +36,7 @@
             <div>
                 <p class="text-xs text-slate-400">Total Profit</p>
                 <p class="text-lg font-semibold" data-profit-color>
-                    <span data-total-profit></span>
+                    <span data-total-profit>$0.00</span>
                 </p>
             </div>
         </div>
@@ -50,50 +50,49 @@
             <p class="text-xs text-slate-500 text-left mb-1 flex items-center gap-1">
                 <i class="fa-solid fa-coins text-indigo-400"></i> Converted Cost
             </p>
-            <span data-converted-cost></span>
+            <span data-converted-cost class="text-slate-400">$0.00</span>
         </div>
         <div class="bg-slate-800/50 p-3 rounded-xl border border-slate-800 shadow-sm text-right 
                     font-medium text-slate-100">
             <p class="text-xs text-slate-500 text-left mb-1 flex items-center gap-1">
-                <i class="fa-solid fa-arrow-right-arrow-left text-indigo-300"></i> Minimum Price
+                <i class="fa-solid fa-piggy-bank text-pink-400"></i> Reinvestment (50%)
             </p>
-            <span data-minimum-price></span>
+            <span data-reinvestment class="text-slate-400">$0.00</span>
         </div>
         <div class="bg-slate-800/50 p-3 rounded-xl border border-slate-800 shadow-sm text-right 
                     font-medium text-slate-100">
             <p class="text-xs text-slate-500 text-left mb-1 flex items-center gap-1">
                 <i class="fa-solid fa-sack-dollar text-green-400"></i> Revenue
             </p>
-            <span data-revenue></span>
+            <span data-revenue class="text-slate-400">$0.00</span>
         </div>
         <div class="bg-slate-800/50 p-3 rounded-xl border border-slate-800 shadow-sm text-right 
                     font-medium text-slate-100">
             <p class="text-xs text-slate-500 text-left mb-1 flex items-center gap-1">
-                <i class="fa-solid fa-wallet text-indigo-300"></i> Personal Profit
+                <i class="fa-solid fa-hand-holding-dollar text-yellow-400"></i> Float (Operating Buffer) (30%)
             </p>
-            <span data-personal-profit></span>
+            <span data-float class="text-slate-400">$0.00</span>
         </div>
         <div class="bg-slate-800/50 p-3 rounded-xl border border-slate-800 shadow-sm text-right 
                     font-medium text-slate-100">
             <p class="text-xs text-slate-500 text-left mb-1 flex items-center gap-1">
-                <i class="fa-solid fa-piggy-bank text-pink-400"></i> Reinvestment
+                <i class="fa-solid fa-arrow-right-arrow-left text-indigo-300"></i> Minimum Price
             </p>
-            <span data-reinvestment></span>
+            <span data-minimum-price class="text-slate-400">$0.00</span>
         </div>
         <div class="bg-slate-800/50 p-3 rounded-xl border border-slate-800 shadow-sm text-right 
                     font-medium text-slate-100">
             <p class="text-xs text-slate-500 text-left mb-1 flex items-center gap-1">
-                <i class="fa-solid fa-hand-holding-dollar text-yellow-400"></i> Float (Operating Buffer)
+                <i class="fa-solid fa-wallet text-indigo-300"></i> Personal Profit (20%)
             </p>
-            <span data-float></span>
+            <span data-personal-profit class="text-slate-400">$0.00</span>
         </div>
     </div>
     <!-- Footer -->
     <div class="mt-4 bg-slate-800/60 border border-slate-800 p-4 rounded-xl 
                 text-right text-lg font-semibold text-slate-100 flex items-center justify-end gap-3">
-        <i class="fa-solid fa-circle-dollar-to-slot" data-profit-color></i>
         <p>Total Profit:
-            <span data-total-profit>0.00</span>
+            <span data-total-profit class="text-slate-400">$0.00</span>
         </p>
     </div>
 </div>
