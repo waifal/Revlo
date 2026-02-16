@@ -11,11 +11,11 @@
  */
 
 // Component CSS
-import TailwindCSS      from "/src/assets/css/output.css" with { type: "css" };
+import TailwindCSS from "/src/assets/css/output.css" with { type: "css" };
 
 // Utilities
-import BuildComponent   from "./../../utils/BuildComponent.js";
-import FetchResource    from "./../../utils/FetchResource.js";
+import BuildComponent from "./../../utils/BuildComponent.js";
+import FetchResource from "./../../utils/FetchResource.js";
 
 const customCSS = `
     .no-scrollbar::-webkit-scrollbar {
@@ -50,34 +50,34 @@ class ExchangeRateSelector extends HTMLElement {
     async #_fetchRates() {
         const data = await FetchResource("./src/config/config.json");
         this._exchangeRates = data.Currencies.ExchangeRates[0];
-        this._baseCurrency  = data.Currencies.BaseCurrency;
-        this._countries     = Object.keys(this._exchangeRates).sort((a, b) => a.localeCompare(b));
+        this._baseCurrency = data.Currencies.BaseCurrency;
+        this._countries = Object.keys(this._exchangeRates).sort((a, b) => a.localeCompare(b));
     }
 
     #_buildDropdown() {
-        const $container    = this._root.querySelector(".custom-select");
-        const $selected     = $container.querySelector(".selected");
-        const $list         = $container.querySelector(".options");
+        const $container = this._root.querySelector(".custom-select");
+        const $selected = $container.querySelector(".selected");
+        const $list = $container.querySelector(".options");
 
         $list.innerHTML = "";
 
         this._countries.forEach(country => {
             const li = document.createElement("li");
-            li.className        = "px-3 py-2 flex items-center hover:bg-slate-800 cursor-pointer";
-            li.dataset.value    = this._exchangeRates[country].toFixed(2);
-            li.dataset.code     = country;
+            li.className = "px-3 py-2 flex items-center hover:bg-slate-800 cursor-pointer";
+            li.dataset.value = this._exchangeRates[country].toFixed(2);
+            li.dataset.code = country;
 
-            const svgPath       = `/src/assets/imgs/flags/${country.toLowerCase()}.svg`;
-            li.innerHTML        = `
+            const svgPath = `/src/assets/imgs/flags/${country.toLowerCase()}.svg`;
+            li.innerHTML = `
                 <img src="${svgPath}" class="w-5 h-3">
                 <span class="px-2">${country}</span>
             `;
             $list.appendChild(li);
         });
 
-        const initial               = this._exchangeRates[this._baseCurrency] ? this._baseCurrency : this._countries[0];
-        this.dataset.exchangeRate   = this._exchangeRates[initial].toFixed(2);
-        $selected.innerHTML         = `
+        const initial = this._exchangeRates[this._baseCurrency] ? this._baseCurrency : this._countries[0];
+        this.dataset.exchangeRate = this._exchangeRates[initial].toFixed(2);
+        $selected.innerHTML = `
             <img src="/src/assets/imgs/flags/${initial.toLowerCase()}.svg" class="w-5 h-3">
             <span class="px-2">${initial}</span>
         `;
@@ -103,10 +103,10 @@ class ExchangeRateSelector extends HTMLElement {
             li.setAttribute("tabindex", "-1");
             li.addEventListener("click", () => {
                 this.dataset.exchangeRate = li.dataset.value;
-                
+
                 $selected.innerHTML = li.innerHTML;
                 $list.classList.add("hidden");
-                
+
                 this.#notifyChange();
             });
         });
@@ -151,16 +151,18 @@ class ExchangeRateSelector extends HTMLElement {
                 const key = e.key;
                 if (key === "ArrowDown") {
                     e.preventDefault();
-                    focusedIndex = (idx + 1) % options.length; 
+                    focusedIndex = (idx + 1) % options.length;
                     options[focusedIndex].focus();
                 } else if (key === "ArrowUp") {
                     e.preventDefault();
-                    focusedIndex = (idx - 1 + options.length) % options.length; 
+                    focusedIndex = (idx - 1 + options.length) % options.length;
                     options[focusedIndex].focus();
                 } else if (key === "Enter" || key === " ") {
-                    e.preventDefault(); li.click();
+                    e.preventDefault();
+                    li.click();
                 } else if (key === "Escape") {
-                    e.preventDefault(); $list.classList.add("hidden"); 
+                    e.preventDefault();
+                    $list.classList.add("hidden");
                     $selected.focus();
                 } else if (key.length === 1) {
                     // Type-ahead with cycling
@@ -172,7 +174,7 @@ class ExchangeRateSelector extends HTMLElement {
 
                         if (char === lastTypedChar) {
                             const current = matches.findIndex(o => o.i === lastMatchIndex);
-                            
+
                             match = matches[(current + 1) % matches.length];
                         } else match = matches[0];
 
@@ -188,7 +190,7 @@ class ExchangeRateSelector extends HTMLElement {
 
     async #_render() {
         await this.#_fetchRates();
-        
+
         const elements = this.#_buildDropdown();
         const options = this.#_bindEvents(elements);
 
