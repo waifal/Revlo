@@ -1,14 +1,29 @@
-<div class="custom-select relative w-22 sm:w-27.5 shrink-0">
+<div
+    class="custom-select relative w-22 sm:w-27.5 shrink-0"
+>
     <!-- Selected flag -->
-    <div class="selected flex items-center justify-center px-2 py-2
-        bg-slate-900 border border-slate-700 rounded-lg
-        cursor-pointer transition-all duration-150
-        hover:border-slate-500">
+    <div
+        class="selected flex items-center justify-center px-2 py-2
+            bg-slate-900 border border-slate-700 rounded-lg
+            cursor-pointer transition-all duration-150
+            hover:border-slate-500"
+        role="button"
+        tabindex="0"
+        aria-haspopup="listbox"
+        aria-expanded="false"
+        aria-controls="exchange-rate-listbox"
+        aria-label="Select base currency"
+    >
     </div>
 
     <!-- Dropdown list -->
-    <ul class="options hidden absolute left-0 mt-1 w-full
-        bg-slate-900 border border-slate-700 rounded-xl
-        shadow-lg z-50 max-h-60 overflow-y-auto no-scrollbar">
+    <ul
+        id="exchange-rate-listbox"
+        role="listbox"
+        tabindex="-1"
+        class="options hidden absolute left-0 mt-1 w-full
+            bg-slate-900 border border-slate-700 rounded-xl
+            shadow-lg z-50 max-h-60 overflow-y-auto no-scrollbar"
+    >
     </ul>
 </div>

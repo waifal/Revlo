@@ -58,6 +58,7 @@ class Calculator extends HTMLElement {
     get convertedCost() {
         const cost = Number(this.$cost.value);
         const rate = Number(this.$exchangeRate.value);
+        
         return cost && rate ? cost * rate : 0;
     }
 
@@ -139,15 +140,19 @@ class Calculator extends HTMLElement {
 
             if (isMissing) return;
 
-            const resultsTable = document.querySelector("app-results-table");
+            const updateResults = () => {
+                const resultsTable = document.querySelector("app-results-table");
 
-            resultsTable.updateConvertedCost(this.convertedCost);
-            resultsTable.updateMinimumPrice(this.minimumPrice);
-            resultsTable.updateTotalProfit(this.totalProfit);
-            resultsTable.updateRevenue(this.revenue);
-            resultsTable.updateReinvestment(this.revinvestment);
-            resultsTable.updateFloat(this.float);
-            resultsTable.updatePersonalProfit(this.personalProfit);
+                resultsTable.updateConvertedCost(this.convertedCost);
+                resultsTable.updateMinimumPrice(this.minimumPrice);
+                resultsTable.updateTotalProfit(this.totalProfit);
+                resultsTable.updateRevenue(this.revenue);
+                resultsTable.updateReinvestment(this.revinvestment);
+                resultsTable.updateFloat(this.float);
+                resultsTable.updatePersonalProfit(this.personalProfit);
+            }
+
+            updateResults();
         };
     }
 

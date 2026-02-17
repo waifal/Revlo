@@ -32,38 +32,59 @@ class ResultsTable extends HTMLElement {
     constructor() {
         super();
 
-        // Root
         this._root = this.attachShadow({ mode: "closed" });
         template.component(this._root).then(() => this.#_init());
 
-        // Formatter
-        this.format = (amount, locales = undefined, currency = undefined) => formatCurrency(amount, locales, currency);
-        
-        // Iterator
-        this.populateFields = (fields, value, isProfit = false) => {
-            if (!fields.forEach) fields = [fields];
+        this.format = (amount, locales = undefined, currency = undefined) =>
+            formatCurrency(amount, locales, currency);
+    }
 
-            fields.forEach(f => {
-                const amount = Number(value);
-                f.textContent = this.format(amount);
+    #animateCurrency(elements, endValue, isProfit = false, duration = 500) {
 
-                if (isProfit) {
-                    f.classList.remove("text-slate-400", "text-green-400", "text-red-500");
+        if (!elements.forEach) elements = [elements];
 
-                    if (amount > 0) {
-                        f.classList.add("text-green-400");
-                    } else if (amount < 0) {
-                        f.classList.add("text-red-500");
-                    } else {
-                        f.classList.add("text-slate-400");
+        elements.forEach(el => {
+
+            if (el._animFrame) cancelAnimationFrame(el._animFrame);
+
+            const startTime = performance.now();
+
+            const step = (time) => {
+                const progress = Math.min((time - startTime) / duration, 1);
+
+                const eased = 1 - Math.pow(1 - progress, 3);
+                const value = endValue * eased;
+
+                el.textContent = this.format(value);
+
+                if (progress < 1) {
+                    el._animFrame = requestAnimationFrame(step);
+                } else {
+                    el.textContent = this.format(endValue);
+
+                    if (isProfit) {
+                        el.classList.remove(
+                            "text-slate-400",
+                            "text-green-400",
+                            "text-red-500"
+                        );
+
+                        if (endValue > 0) {
+                            el.classList.add("text-green-400");
+                        } else if (endValue < 0) {
+                            el.classList.add("text-red-500");
+                        } else {
+                            el.classList.add("text-slate-400");
+                        }
                     }
                 }
-            });
-        };
+            };
+
+            el._animFrame = requestAnimationFrame(step);
+        });
     }
 
     #_init() {
-        // Queries
         this.convertedCost  = this._root.querySelectorAll("[data-converted-cost]");
         this.minimumPrice   = this._root.querySelector("[data-minimum-price]");
         this.revenue        = this._root.querySelectorAll("[data-revenue]");
@@ -74,31 +95,31 @@ class ResultsTable extends HTMLElement {
     }
 
     updateConvertedCost(value) {
-        this.populateFields(this.convertedCost, value);
+        this.#animateCurrency(this.convertedCost, Number(value));
     }
 
     updateMinimumPrice(value) {
-        this.minimumPrice.textContent = this.format(Number(value));
+        this.#animateCurrency(this.minimumPrice, Number(value));
     }
 
     updateTotalProfit(value) {
-        this.populateFields(this.totalProfit, value, true);
+        this.#animateCurrency(this.totalProfit, Number(value), true);
     }
 
     updateRevenue(value) {
-        this.populateFields(this.revenue, value);
+        this.#animateCurrency(this.revenue, Number(value));
     }
 
     updateReinvestment(value) {
-        this.reinvestment.textContent = this.format(Number(value));
+        this.#animateCurrency(this.reinvestment, Number(value));
     }
 
     updateFloat(value) {
-        this.float.textContent = this.format(Number(value));
+        this.#animateCurrency(this.float, Number(value));
     }
 
     updatePersonalProfit(value) {
-        this.personalProfit.textContent = this.format(Number(value));
+        this.#animateCurrency(this.personalProfit, Number(value));
     }
 }
 
