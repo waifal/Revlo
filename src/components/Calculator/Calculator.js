@@ -115,11 +115,19 @@ class Calculator extends HTMLElement {
 
         [cost, exchangeRate, estSale].forEach(el => {
             el.onkeydown = e => {
-                const invalidKeys = ["E", "e", "-", "."];
+                const invalidKeys = ["E", "e", "-"];
 
-                if(invalidKeys.includes(e.key)) e.preventDefault();
+                if(el !== exchangeRate) {
+                    invalidKeys.push(".");
+                }
 
-                e.key === "Enter" ? this.$calculateButton.click() : null;
+                if(invalidKeys.includes(e.key)) {
+                    e.preventDefault();
+                }
+
+                if(e.key === "Enter") {
+                    this.$calculateButton.click();
+                }
             }
 
             el.onpaste = e => e.preventDefault();
