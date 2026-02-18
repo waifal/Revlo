@@ -117,10 +117,6 @@ class Calculator extends HTMLElement {
             el.onkeydown = e => {
                 const invalidKeys = ["E", "e", "-"];
 
-                if(el !== exchangeRate) {
-                    invalidKeys.push(".");
-                }
-
                 if(invalidKeys.includes(e.key)) {
                     e.preventDefault();
                 }
